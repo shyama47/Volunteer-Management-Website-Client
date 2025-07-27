@@ -50,7 +50,7 @@ const SignUp = () => {
         })
     }
     return (
-        <div className="hero bg-base-300 min-h-screen">
+        <div className="hero min-h-screen">
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl my-16">
       <div className="card-body">
 			{/* <Helmet>
@@ -80,13 +80,13 @@ const SignUp = () => {
 							<label htmlFor="password" className="text-sm">Password</label>
 							<input type="password" name="password" id="password" required placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
 						</div>
-						<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-600 text-gray-50 mt-3 cursor-pointer">Sign Up</button>
+						<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-600 text-gray-50 mt-3 cursor-pointer transform transition-transform hover:scale-105 duration-500">Sign Up</button>
 					</div>
 				</div>
 			</form>
             <SocialLogin></SocialLogin>
-            <p className="text-sm text-center dark:text-gray-600">Already have an account?
-					<Link to='/signIn' className="underline">Sign in here</Link>
+            <p className="text-sm text-center dark:text-gray-600 font-bold">Already have an account?
+					<Link to='/signIn' className="underline font-medium text-blue-600">Sign in here</Link>
 				</p>
 		</div>
         </div>

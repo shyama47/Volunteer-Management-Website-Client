@@ -21,18 +21,19 @@ const SignIn = () => {
 		signIn(email,password)
 		.then(result=>{
 			console.log(result.user)
+      toast.success('user successfully signIn')
 			navigate(from)
-              toast.success('user successfully signIn')
 		})
 		.catch(error =>{
-			console.log(error)
+      console.log(error);
+			toast.error('Invaild email or password')
 		})
     }
     return (
-         <div className="hero bg-base-300 min-h-screen">
+         <div className="hero  min-h-screen">
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
-         <h1 className="text-5xl font-bold">Sign In now!</h1>
+         <h1 className="text-5xl font-medium text-center mb-3">Sign In now!!</h1>
         <form onSubmit={handleSignIn}>
             <fieldset className="fieldset">
           <label className="label">Email</label>
@@ -40,14 +41,14 @@ const SignIn = () => {
           <label className="label">Password</label>
           <input type="password" name='password' className="input" placeholder="Password" />
           <div><a className="link link-hover">Forgot password?</a></div>
-          <button className="btn btn-neutral">Sign In</button>
+          <button className="btn btn-primary transform transition-transform hover:scale-105 duration-500">Sign In</button>
         </fieldset>
         </form>
        <div>
          <SocialLogin from={from}></SocialLogin>
        </div>
-        <p className="text-sm text-center dark:text-gray-600">Dont have account?
-		<Link to='/signUp'  className="underline">Sign up here</Link>
+        <p className="text-sm text-center dark:text-gray-600 font-bold">Dont have account?
+		<Link to='/signUp'  className="underline font-medium text-blue-600">Sign up here</Link>
 	</p>
       </div>
     </div>
