@@ -13,11 +13,11 @@ const AddVolunteer = () => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const rawData = Object.fromEntries(formData.entries());
+    const resData = Object.fromEntries(formData.entries());
 
     const newVolunteer = {
-      ...rawData,
-      volunteers: parseInt(rawData.volunteers),
+      ...resData,
+      volunteers: parseInt(resData.volunteers),
       deadline: deadline.toISOString().split('T')[0],
     //   deadline:deadline.toLocaleDateString(),
     };
