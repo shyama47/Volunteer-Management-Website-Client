@@ -27,7 +27,7 @@ const AddVolunteer = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto bg-white shadow-2xl rounded-xl my-10 p-6 md:p-10">
+    <div className="max-w-11/12 md:max-w-7/12  bg-white shadow-2xl rounded-xl my-10 p-6 md:p-10 mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-center">Add Volunteer Need Post</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
