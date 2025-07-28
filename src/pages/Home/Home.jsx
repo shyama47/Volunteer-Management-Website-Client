@@ -1,9 +1,10 @@
 import React from 'react';
+import BannerSlider from '../../componets/BannerSlider';
 
 const Home = () => {
     return (
         <div>
-            <h1>home</h1>
+          <BannerSlider></BannerSlider>
         </div>
     );
 };

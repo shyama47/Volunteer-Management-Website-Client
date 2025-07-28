@@ -49,6 +49,10 @@ const Footer = () => {
     </div>
 	<div className="py-6 text-sm text-center bg-blue-900 text-white px-2">© 2025 Freelance Task Marketplace. All rights reserved.</div>
 </footer>
+
+
+
+
     );
 };
 

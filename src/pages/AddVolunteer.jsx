@@ -4,6 +4,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from './Provider/AuthContext';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddVolunteer = () => {
   const { user } = useContext(AuthContext);
@@ -23,7 +25,22 @@ const AddVolunteer = () => {
     };
 //  2 vabei kora jai but .toISOString().split('T')[0] eta beshi safe cross-browser ও backend consistency er jonno
     console.log("🚀 ~ handleSubmit ~ newVolunteer:", newVolunteer);
+    axios.post('http://localhost:3000/addVolunteer',newVolunteer)
+    .then(res =>{
+        console.log(res.data)
+        Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "volunteer job post successfully added",
+  showConfirmButton: false,
+  timer: 1500
+});
+    })
+    .catch(error =>{
+        console.log(error);
+    })
     form.reset();
+
   };
 
   return (
