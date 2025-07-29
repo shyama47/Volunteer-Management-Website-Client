@@ -45,17 +45,17 @@ export const router =createBrowserRouter([
                 hydrateFallbackElement:<Loading></Loading>
                
             },
-            // {
-            //     path:'allVolunteer/details/:volunteerId',
-            //     element:<PrivateRoute>
-            //         <VolunteerDetails></VolunteerDetails>
-            //     </PrivateRoute>,
-            //     loader:async({params})=>{
-            //    const responce =await axios.get(`http://localhost:3000/allVolunteer/details/${params.volunteerId}`)
-            //    return responce.data
-            //     },
-            //      hydrateFallbackElement:<Loading></Loading>
-            // },
+            {
+                path:'allVolunteer/details/:volunteerId',
+                element:<PrivateRoute>
+                    <VolunteerDetails></VolunteerDetails>
+                </PrivateRoute>,
+                loader:async({params})=>{
+               const responce =await axios.get(`http://localhost:3000/allVolunteer/details/${params.volunteerId}`)
+               return responce.data
+                },
+                 hydrateFallbackElement:<Loading></Loading>
+            },
 
             {
                 path:'/manage-post',
