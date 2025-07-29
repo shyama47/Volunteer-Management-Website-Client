@@ -67,7 +67,7 @@ const AddVolunteer = () => {
           <select name="category" className="border border-blue-300 px-3 py-2 rounded-lg focus:border-blue-800 focus:outline-none focus:border-2 w-full" required>
             <option value="">Select a Category</option>
             <option value="healthcare">Healthcare</option>
-            <option value="education">Education</option>
+            <option value="Education">Education</option>
             <option value="social service">Social Service</option>
             <option value="animal welfare">Animal Welfare</option>
           </select>

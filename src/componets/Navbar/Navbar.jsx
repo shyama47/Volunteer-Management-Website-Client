@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="shadow-2xl sticky top-0 z-50">
+    <nav className="shadow-md sticky top-0 z-50">
       <div className="max-w-7xl bg-primary px-4 py-3 flex justify-between items-center border-b-2 border-primary-content">
         {/* Left: Logo */}
         <h1 className="text-2xl font-bold text-base-100">Volunteer</h1>
@@ -31,9 +31,9 @@ const Navbar = () => {
         <div className="md:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? (
-              <FaTimes size={24} color="base-100" style={{ border: '2px solid' }} />
+              <FaTimes size={24} color="white" style={{ border: '2px solid' }} />
             ) : (
-              <FaBars size={24} color="base-100" />
+              <FaBars size={24} color="white" />
             )}
           </button>
         </div>

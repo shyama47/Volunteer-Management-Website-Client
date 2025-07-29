@@ -39,12 +39,12 @@ const BannerSlider = () => {
   return (
     <div className="max-w-6xl mx-auto bg-gray-900 my-10 rounded-lg ">
       <Swiper
-        modules={[Pagination]}
+        modules={[Pagination,Autoplay]}
         // modules={[ Navigation, Autoplay]}
         pagination={{ clickable: true }}
           className="swiper-pagination-custom"
         // navigation
-        // autoplay={{ delay: 4000 }}
+        autoplay={{ delay: 4000 }}
         spaceBetween={10}
         slidesPerView={1}
         // loop={true}
