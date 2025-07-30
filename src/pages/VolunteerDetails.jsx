@@ -20,10 +20,10 @@ const VolunteerDetails = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
             <p><span className="font-semibold">Category:</span> {post.category}</p>
             <p><span className="font-semibold">Location:</span> {post.location}</p>
-            <p><span className="font-semibold">Volunteers Needed:</span> {post.volunteers_needed}</p>
+            <p><span className="font-semibold">Volunteers Needed:</span> {post.volunteers}</p>
             <p><span className="font-semibold">Deadline:</span> {post.deadline}</p>
-            <p><span className="font-semibold">Organizer Name:</span> {post.organizer_name}</p>
-            <p><span className="font-semibold">Organizer Email:</span> {post.organizer_email}</p>
+            <p><span className="font-semibold">Organizer Name:</span> {post.userName}</p>
+            <p><span className="font-semibold">Organizer Email:</span> {post.email}</p>
           </div>
 
           {/* Button */}
