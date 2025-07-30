@@ -12,6 +12,7 @@ import ErrorPage from '../pages/ErrorPage';
 import axios from 'axios';
 import Loading from '../componets/Loading';
 import VolunteerDetails from '../pages/VolunteerDetails';
+import BeAVolunteer from '../pages/BeAVolunteer';
 
 export const router =createBrowserRouter([
     {
@@ -56,6 +57,18 @@ export const router =createBrowserRouter([
                 },
                  hydrateFallbackElement:<Loading></Loading>
             },
+            {
+                path:'volunteer/:id',
+                element:<PrivateRoute>
+                    <BeAVolunteer></BeAVolunteer>
+                </PrivateRoute>,
+                loader:async({params})=>{
+               const responce =await axios.get(`http://localhost:3000/volunteer/${params.id}`)
+               return responce.data
+                },
+                 hydrateFallbackElement:<Loading></Loading>
+            },
+            
 
             {
                 path:'/manage-post',

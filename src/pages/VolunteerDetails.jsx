@@ -1,11 +1,13 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
+
 
 const VolunteerDetails = () => {
-  const post = useLoaderData(); // তুমি loader দিয়ে data পাঠাচ্ছো ধরে নিচ্ছি
+  const post = useLoaderData(); 
 
   return (
-    <div className="w-11/12 md:w-8/12 mx-auto my-10">
+
+   <div className="w-11/12 md:w-8/12 mx-auto my-10">
       <div className="bg-white shadow-lg rounded-xl overflow-hidden p-5">
         {/* Thumbnail */}
         <img src={post.thumbnail} alt="Post Thumbnail" className="w-full h-60 object-cover rounded-md mb-6" />
@@ -25,9 +27,11 @@ const VolunteerDetails = () => {
           </div>
 
           {/* Button */}
-          <button className="btn btn-primary mt-5 w-full hover:scale-105 transition-transform duration-300">
+          <Link to={`/volunteer/${post._id}`}>
+<button className="btn btn-primary mt-5 w-full hover:scale-105 transition-transform duration-300">
             Be a Volunteer
           </button>
+          </Link>
         </div>
       </div>
     </div>
