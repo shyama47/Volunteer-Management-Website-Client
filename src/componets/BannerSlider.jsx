@@ -30,7 +30,7 @@ const sliderData = [
     title: 'Slum Area Food Distribution',
     description:
       'Distribute food packages and hygiene products to underprivileged families in slum areas',
-    image: 'https://i.postimg.cc/VLG08ct8/Screenshot-2025-07-27-211252-Copy.png',
+    image: 'https://i.postimg.cc/pybqCZ9d/Screenshot-2025-07-29-205207.png',
     textColor: 'text-green-400',
   }
 ];

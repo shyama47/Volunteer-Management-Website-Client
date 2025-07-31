@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { AuthContext } from './Provider/AuthContext';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
 
 const BeAVolunteer = () => {
+  const navigate =useNavigate();
   const volunteer =useLoaderData();
     const {thumbnail,category,location,deadline,description,title,volunteers,email,userName} =volunteer;
     const {user} =useContext(AuthContext);
@@ -25,7 +26,10 @@ const BeAVolunteer = () => {
   title: " request added volunteers count update",
   showConfirmButton: false,
   timer: 1500
-}); }
+}); 
+}
+from.reset();
+navigate('/posts');
        })
        .catch(error=>{
         console.log(error);
@@ -71,12 +75,12 @@ const BeAVolunteer = () => {
         
                   <div>
                     <label className="block mb-1 font-semibold">Organizer Name</label>
-                    <input type="text" name='organizer-email'  defaultValue={userName} readOnly className="border border-blue-300 px-3 py-2 rounded-lg bg-blue-100 text-gray-500 w-full focus:border-blue-800 focus:outline-none focus:border-2 cursor-not-allowed" />
+                    <input type="text" name='organizer_email'  defaultValue={userName} readOnly className="border border-blue-300 px-3 py-2 rounded-lg bg-blue-100 text-gray-500 w-full focus:border-blue-800 focus:outline-none focus:border-2 cursor-not-allowed" />
                   </div>
           
                   <div>
                     <label className="block mb-1 font-semibold">Organizer Email</label>
-                    <input type="email" name='organizer-name' defaultValue={email} readOnly className="border border-blue-300 px-3 py-2 rounded-lg bg-blue-100 text-gray-500 w-full focus:border-blue-800 focus:outline-none focus:border-2 cursor-not-allowed" />
+                    <input type="email" name='organizer_name' defaultValue={email} readOnly className="border border-blue-300 px-3 py-2 rounded-lg bg-blue-100 text-gray-500 w-full focus:border-blue-800 focus:outline-none focus:border-2 cursor-not-allowed" />
                   </div>
                   {/*  */}
                   {
@@ -84,11 +88,11 @@ const BeAVolunteer = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                       <div>
                       <label className='block mb-2 font-semibold'>Volunter Name</label>
-                      <input type="text" value={user.displayName} name='volunteer-name' readOnly className='border border-blue-300 px-3 py-2 rounded-lg bg-blue-100 text-gray-500 w-full focus:border-blue-800 focus:outline-none focus:border-2 cursor-not-allowed'/>
+                      <input type="text" value={user.displayName} name='volunteer_name' readOnly className='border border-blue-300 px-3 py-2 rounded-lg bg-blue-100 text-gray-500 w-full focus:border-blue-800 focus:outline-none focus:border-2 cursor-not-allowed'/>
                     </div>
                     <div>
                       <label className='block mb-2 font-semibold'>Volunter Email</label>
-                      <input type="text" value={user.email} name='volunteer-email' readOnly className='border border-blue-300 px-3 py-2 rounded-lg bg-blue-100 text-gray-500 w-full focus:border-blue-800 focus:outline-none focus:border-2 cursor-not-allowed'/>
+                      <input type="text" value={user.email} name='volunteer_email' readOnly className='border border-blue-300 px-3 py-2 rounded-lg bg-blue-100 text-gray-500 w-full focus:border-blue-800 focus:outline-none focus:border-2 cursor-not-allowed'/>
                     </div>
                     </div>
                   }

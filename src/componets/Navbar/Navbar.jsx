@@ -81,7 +81,7 @@ const Navbar = () => {
                   ➕ Add Volunteer Need Post
                 </NavLink>
                 <NavLink
-                  to="/manage-posts"
+                  to="/manage-post"
                   className="block px-5 py-3 hover:bg-blue-100 text-sm font-semibold text-info-content"
                 >
                   📋 Manage My Posts
@@ -142,7 +142,7 @@ const Navbar = () => {
                 ➕ Add Volunteer Need Post
               </NavLink>
               <NavLink
-                to="/manage-posts"
+                to="/manage-post"
                 onClick={() => setMenuOpen(false)}
                 className="block text-info-content"
               >

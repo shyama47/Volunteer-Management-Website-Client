@@ -19,7 +19,7 @@ const Home = () => {
         }
      </div>
      <NavLink to='/posts' className='flex items-center justify-center mb-10'>
-        <button  className='bg-blue-900 text-white px-16 py-5 text-xl rounded-full cursor-pointer transition-transform hover:scale-105 duration-500'>See more</button>
+        <button  className='bg-blue-900 text-white px-16 py-5 text-xl font-bold rounded-full cursor-pointer transition-transform hover:scale-105 duration-500'>See more</button>
      </NavLink>
      </div>
        </div>

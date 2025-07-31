@@ -8,7 +8,7 @@ const VolunteerDetails = () => {
   return (
 
    <div className="w-11/12 md:w-8/12 mx-auto my-10">
-      <div className="bg-white shadow-lg rounded-xl overflow-hidden p-5">
+      <div className="bg-white shadow-lg rounded-xl overflow-hidden p-8">
         {/* Thumbnail */}
         <img src={post.thumbnail} alt="Post Thumbnail" className="w-full h-60 object-cover rounded-md mb-6" />
 
