@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './Provider/AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router';
 
 const MyVolunteerPost = () => {
     const {user}=useContext(AuthContext)
@@ -77,7 +78,9 @@ const MyVolunteerPost = () => {
             <td>{post.deadline}</td>
             
                 <td>
+             <Link to={`/update/${post._id}`}>
               <button className="btn btn-sm btn-error ">Edit</button>
+             </Link>
             </td>
             <td>
               <button onClick={()=>handleDelete(post._id)} className="btn btn-sm btn-warning  ">Delete</button>
