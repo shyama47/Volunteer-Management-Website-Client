@@ -9,7 +9,7 @@ const MyVolunteerRequestPost = () => {
    axios.get(`http://localhost:3000/volunnteerRequestPost?email=${user.email}`)
    .then(res=>{
     setRequestUser(res.data)
-    console.log(res.data)
+    
    })
    .catch(error=>{
     console.log(error);
@@ -18,7 +18,9 @@ const MyVolunteerRequestPost = () => {
     return (
         <div className='w-11/12 md:max-w-10/12 mx-auto my-10'>
             <h1 className='hidden md:block text-2xl font-bold text-center md:text-left mb-5'>My Volunteer Request Post</h1>
-            <div className='overflow-x-auto bg-white shadow-md rounded-lg'>
+            <div className='overflow-x-auto border border-gray-200 shadow-md rounded-lg'>
+                {
+                    requestUser.length > 0 ? (
                 <table className='w-full table text-sm md:text-base'>
                     <thead className='bg-gray-200 text-gray-700'>
                         <tr>
@@ -43,6 +45,13 @@ const MyVolunteerRequestPost = () => {
                         )}
                     </tbody>
                 </table>
+                    ):(
+                       <div className="p-10 text-center text-gray-800">
+        <p className="text-xl font-medium">You haven’t requested to volunteer for any posts yet</p>
+        <p className="text-sm mt-1">Browse volunteer opportunities and send a request to join</p>
+      </div> 
+                    )
+                }
             </div>
         </div>
     );
