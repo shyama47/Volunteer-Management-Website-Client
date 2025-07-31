@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './Provider/AuthContext';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const MyVolunteerRequestPost = () => {
     const {user} =useContext(AuthContext);
@@ -15,6 +16,40 @@ const MyVolunteerRequestPost = () => {
     console.log(error);
    })
     },[user?.email])
+    // request cancel 
+    const handleCancelRequest = (id)=>{
+        Swal.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+  
+}).then((result) => {
+  if (result.isConfirmed) {
+      axios.delete(`http://localhost:3000/request/delete/${id}`)
+      .then(res =>{
+       console.log(res.data)
+       console.log('cancel succesfully')
+       if(res.data.deletedCount){
+     Swal.fire({
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
+    });
+     const remainingData = requestUser.filter(data => data._id !== id)
+   setRequestUser(remainingData)
+       }
+      })
+    .catch(error =>{
+    console.log(error)
+   })
+  }
+});
+   
+    }
     return (
         <div className='w-11/12 md:max-w-10/12 mx-auto my-10'>
             <h1 className='hidden md:block text-2xl font-bold text-center md:text-left mb-5'>My Volunteer Request Post</h1>
@@ -39,7 +74,7 @@ const MyVolunteerRequestPost = () => {
                     <td>{user.deadline}</td>
                     <td>{user.status}</td> 
                     <td>
-                        <button className="btn btn-sm btn-accent">Cencel</button>
+                        <button onClick={()=>handleCancelRequest(user._id)} className="btn btn-sm btn-accent">Cencel</button>
                         </td>                     
                             </tr>
                         )}
