@@ -4,19 +4,20 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { AuthContext } from './Provider/AuthContext';
 import SocialLogin from './SocialLogin';
+import { Helmet } from 'react-helmet-async';
 // import { Helmet } from 'react-helmet-async';
 
 const SignIn = () => {
 	const {signIn} =useContext(AuthContext)
 	const location =useLocation();
-	console.log(location);
+	// console.log(location);
 	const navigate =useNavigate();
     const from =location.state || '/';
     const handleSignIn =(e)=>{
         e.preventDefault();
         const email =e.target.email.value;
         const password =e.target.password.value;
-        console.log(email,password);
+        // console.log(email,password);
 		// signIn
 		signIn(email,password)
 		.then(result=>{
@@ -30,8 +31,11 @@ const SignIn = () => {
 		})
     }
     return (
-         <div className="hero  min-h-screen">
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+         <div className="flex justify-center items-center my-20">
+          <Helmet>
+            <title>SignIn || Page</title>
+          </Helmet>
+    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-xl border border-primary/40 rounded-2xl">
       <div className="card-body">
          <h1 className="text-5xl font-medium text-center mb-3">Sign In now!!</h1>
         <form onSubmit={handleSignIn}>
@@ -47,8 +51,8 @@ const SignIn = () => {
        <div>
          <SocialLogin from={from}></SocialLogin>
        </div>
-        <p className="text-sm text-center dark:text-gray-600 font-bold">Dont have account?
-		<Link to='/signUp'  className="underline font-medium text-blue-600">Sign up here</Link>
+        <p className="text-sm text-center font-bold">Dont have account?
+		<Link to='/signUp'  className="underline font-medium text-base-content">Sign up here</Link>
 	</p>
       </div>
     </div>

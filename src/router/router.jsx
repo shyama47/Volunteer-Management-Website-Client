@@ -14,6 +14,9 @@ import Loading from '../componets/Loading';
 import VolunteerDetails from '../pages/VolunteerDetails';
 import BeAVolunteer from '../pages/BeAVolunteer';
 import UpdateMyVolunteerPost from '../pages/UpdateMyVolunteerPost';
+import Contact from '../pages/Contact';
+import Privacy from '../pages/Privacy';
+import TermsAndCondition from '../pages/TermsAndCondition';
 
 export const router =createBrowserRouter([
     {
@@ -25,7 +28,7 @@ export const router =createBrowserRouter([
                 index:true,
                 Component:Home,
                 loader:async()=>{
-                const responce =await axios.get('http://localhost:3000/limitVolunteer')
+                const responce =await axios.get('https://assignment-11-server-khaki-alpha.vercel.app/limitVolunteer')
                   return responce.data
                 },
                 hydrateFallbackElement:<Loading></Loading>
@@ -41,7 +44,7 @@ export const router =createBrowserRouter([
                 path:'posts',
                 Component:AllVolunteerPost,
                 loader:async()=>{
-                    const responce =await axios.get('http://localhost:3000/allVolunteer')
+                    const responce =await axios.get('https://assignment-11-server-khaki-alpha.vercel.app/allVolunteer')
                     return responce.data
                 },
                 hydrateFallbackElement:<Loading></Loading>
@@ -53,7 +56,7 @@ export const router =createBrowserRouter([
                     <VolunteerDetails></VolunteerDetails>
                 </PrivateRoute>,
                 loader:async({params})=>{
-               const responce =await axios.get(`http://localhost:3000/allVolunteer/details/${params.volunteerId}`)
+               const responce =await axios.get(`https://assignment-11-server-khaki-alpha.vercel.app/allVolunteer/details/${params.volunteerId}`)
                return responce.data
                 },
                  hydrateFallbackElement:<Loading></Loading>
@@ -64,7 +67,7 @@ export const router =createBrowserRouter([
                     <BeAVolunteer></BeAVolunteer>
                 </PrivateRoute>,
                 loader:async({params})=>{
-               const responce =await axios.get(`http://localhost:3000/allVolunteer/details/${params.id}`)
+               const responce =await axios.get(`https://assignment-11-server-khaki-alpha.vercel.app/allVolunteer/details/${params.id}`)
                return responce.data
                 },
                  hydrateFallbackElement:<Loading></Loading>
@@ -75,7 +78,7 @@ export const router =createBrowserRouter([
                     <UpdateMyVolunteerPost></UpdateMyVolunteerPost>
                 </PrivateRoute>,
                loader:async({params})=>{
-               const responce =await axios.get(`http://localhost:3000/allVolunteer/details/${params.id}`)
+               const responce =await axios.get(`https://assignment-11-server-khaki-alpha.vercel.app/allVolunteer/details/${params.id}`)
                return responce.data
                 },
                  hydrateFallbackElement:<Loading></Loading>
@@ -94,6 +97,18 @@ export const router =createBrowserRouter([
             {
                 path:'signUp',
                 Component:SignUp
+            },
+            {
+                path:'contact',
+                Component:Contact
+            },
+            {
+                path:'privacy',
+                Component:Privacy
+            },
+            {
+                path:'terms',
+                Component:TermsAndCondition
             }
         ]
     }

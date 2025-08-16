@@ -3,6 +3,7 @@ import { AuthContext } from './Provider/AuthContext';
 import { useLoaderData, useNavigate } from 'react-router';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 
 const BeAVolunteer = () => {
@@ -17,7 +18,7 @@ const BeAVolunteer = () => {
         const fromData =new FormData(from);
         const request =Object.fromEntries(fromData.entries());
        const volunteerRequest ={...request,status:"requested",postId:volunteer._id}
-       axios.post('http://localhost:3000/addRequest',volunteerRequest).then(res=>{
+       axios.post('https://assignment-11-server-khaki-alpha.vercel.app/addRequest',volunteerRequest).then(res=>{
         console.log(res.data)
         if(res.data.insertedId && res.data.modifiedCount){
           Swal.fire({
@@ -37,7 +38,10 @@ navigate('/posts');
     }
     return (
          <div className="w-11/12 md:w-8/12 mx-auto my-10">
-      <form onSubmit={handleRequest} className="bg-white shadow-md p-6 rounded-lg space-y-4">
+          <Helmet>
+            <title>Volunteer Request || Page</title>
+          </Helmet>
+      <form onSubmit={handleRequest} className="bg-base-100 shadow-2xl p-6 rounded-2xl space-y-4 border border-primary/40">
         {/* Read-only Inputs */}
         <div>
           <img src={thumbnail} alt=""  name="thumbnail" className="w-full h-56 object-cover rounded-lg" />

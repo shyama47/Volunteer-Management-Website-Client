@@ -9,7 +9,7 @@ const MyVolunteerPost = () => {
     
     const [needPosts,setNeedPosts] =useState([])
     useEffect(()=>{
-        axios.get(`http://localhost:3000/myVolunteerPost?email=${user.email}`)
+        axios.get(`https://assignment-11-server-khaki-alpha.vercel.app/myVolunteerPost?email=${user.email}`)
         .then(res=>{
             setNeedPosts(res.data)
         })
@@ -29,7 +29,7 @@ const MyVolunteerPost = () => {
   confirmButtonText: "Yes, delete it!"
 }).then((result) => {
   if (result.isConfirmed) {
-     axios.delete(`http://localhost:3000/delete/${Id}`)
+     axios.delete(`https://assignment-11-server-khaki-alpha.vercel.app/delete/${Id}`)
     .then(res =>{
         console.log(res.data)
         console.log('deleted successfully')
@@ -55,13 +55,13 @@ const MyVolunteerPost = () => {
    
     return (
     <div className="w-11/12 md:w-10/12 mx-auto my-10">
-  <h2 className="hidden md:block text-2xl font-bold mb-5 text-center md:text-left">My Volunteer Need Posts</h2>
+  <h2 className="hidden md:block text-2xl font-bold mb-5 text-center md:text-left text-base-content">My Volunteer Need Posts</h2>
 
   {/* Responsive scrollable container */}
-  <div className="overflow-x-auto shadow-md rounded-lg border border-gray-200">
+  <div className="overflow-x-auto shadow-md rounded-t-2xl rounded-b-lg border border-neutral-200">
     {needPosts.length>0 ? (
     <table className="table w-full text-sm md:text-base">
-      <thead className="bg-gray-300 text-gray-700">
+      <thead className="bg-gray-300 text-neutral-700">
         <tr>
           <th>Title</th>
           <th>Location</th>

@@ -7,7 +7,7 @@ const MyVolunteerRequestPost = () => {
     const {user} =useContext(AuthContext);
     const [requestUser,setRequestUser] =useState([]);
     useEffect(()=>{
-   axios.get(`http://localhost:3000/volunnteerRequestPost?email=${user.email}`)
+   axios.get(`https://assignment-11-server-khaki-alpha.vercel.app/volunnteerRequestPost?email=${user.email}`)
    .then(res=>{
     setRequestUser(res.data)
     
@@ -29,7 +29,7 @@ const MyVolunteerRequestPost = () => {
   
 }).then((result) => {
   if (result.isConfirmed) {
-      axios.delete(`http://localhost:3000/request/delete/${id}`)
+      axios.delete(`https://assignment-11-server-khaki-alpha.vercel.app/request/delete/${id}`)
       .then(res =>{
        console.log(res.data)
        console.log('cancel succesfully')
@@ -53,11 +53,11 @@ const MyVolunteerRequestPost = () => {
     return (
         <div className='w-11/12 md:max-w-10/12 mx-auto my-10'>
             <h1 className='hidden md:block text-2xl font-bold text-center md:text-left mb-5'>My Volunteer Request Post</h1>
-            <div className='overflow-x-auto border border-gray-200 shadow-md rounded-lg'>
+            <div className='overflow-x-auto border border-neutral-200 shadow-md rounded-lg'>
                 {
                     requestUser.length > 0 ? (
                 <table className='w-full table text-sm md:text-base'>
-                    <thead className='bg-gray-200 text-gray-700'>
+                    <thead className='bg-gray-300 text-gray-700'>
                         <tr>
                             <th>Title</th>
                             <th>Location</th>

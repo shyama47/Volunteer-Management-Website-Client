@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 
@@ -14,8 +15,8 @@ const UpdateMyVolunteerPost = () => {
     const fromData =new FormData(form);
     const resData =Object.fromEntries(fromData.entries());
     const updateData ={...resData,deadline:deadline.toISOString().split('T')[0]}
-   console.log(updateData);
-   axios.put(`http://localhost:3000/update/${_id}`,updateData)
+  //  console.log(updateData);
+   axios.put(`https://assignment-11-server-khaki-alpha.vercel.app/update/${_id}`,updateData)
    .then(res =>{
     console.log(res.data)
    if(res.data. modifiedCount){
@@ -33,8 +34,11 @@ const UpdateMyVolunteerPost = () => {
    })
     }
     return (
-        <div className="max-w-11/12 md:max-w-7/12  bg-white shadow-2xl rounded-xl my-10 p-6 md:p-10 mx-auto">
-              <h2 className="text-2xl font-bold mb-6 text-center">Add Volunteer Need Post</h2>
+        <div className="max-w-11/12 md:max-w-7/12  bg-base-100 shadow-2xl rounded-xl my-10 p-6 md:p-10 mx-auto border border-primary/40">
+          <Helmet>
+            <title>UpdateVolunteer || Page</title>
+          </Helmet>
+              <h2 className="text-base-content text-2xl font-bold mb-6 text-center">Add Volunteer Need Post</h2>
               <form onSubmit={handleUpdate} className="space-y-4">
         
                 <div>

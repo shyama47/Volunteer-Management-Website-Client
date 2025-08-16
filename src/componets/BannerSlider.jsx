@@ -3,7 +3,7 @@ import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
+import {motion} from 'framer-motion'
 const sliderData = [
   {
     title: 'Riverbank Tree Plantation',
@@ -37,7 +37,16 @@ const sliderData = [
 
 const BannerSlider = () => {
   return (
-    <div className="max-w-6xl mx-auto bg-gray-900 my-10 rounded-lg ">
+    <motion.div 
+     initial={{opacity:0,y:-100}}
+        animate={{opacity:1,y:0}}
+        transition={{
+            type:"spring",
+            stiffness:100,
+            damping:10,
+            delay:0.3
+        }}
+    className="max-w-6xl mx-auto bg-gray-900 my-10 rounded-lg ">
       <Swiper
         modules={[Pagination,Autoplay]}
         // modules={[ Navigation, Autoplay]}
@@ -75,7 +84,7 @@ const BannerSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </motion.div>
   );
 };
 

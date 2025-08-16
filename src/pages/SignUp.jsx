@@ -3,12 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from './Provider/AuthContext';
 import { toast } from 'react-toastify';
 import SocialLogin from './SocialLogin';
+import { Helmet } from 'react-helmet-async';
 // import { Helmet } from 'react-helmet-async';
 
 const SignUp = () => {
     const {createUser,updateUser,setUser,user} =useContext(AuthContext)
 	const location =useLocation();
-	console.log(location);
+	// console.log(location);
 	const navigate =useNavigate();
     const handleSignUp =(e)=>{
         e.preventDefault();
@@ -17,7 +18,7 @@ const SignUp = () => {
         const email =from.email.value;
         const photo =from.photo.value;
         const password =from.password.value;
-        console.log(name,email,password,photo)
+        // console.log(name,email,password,photo)
 		if(password.length<6){
 			toast.error('password must be equal or grater then 6')
 			return;
@@ -50,12 +51,12 @@ const SignUp = () => {
         })
     }
     return (
-        <div className="hero min-h-screen">
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl my-16">
+        <div className="flex justify-center items-center my-20">
+    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-xl border border-primary/40 rounded-2xl">
       <div className="card-body">
-			{/* <Helmet>
+			<Helmet>
 				<title>signUp || page</title>
-			</Helmet> */}
+			</Helmet>
 			<h2 className="mb-3 text-3xl font-semibold text-center">Create a new account</h2>
 			<form onSubmit={handleSignUp} className="space-y-8">
 				<div className="space-y-4">
@@ -85,8 +86,8 @@ const SignUp = () => {
 				</div>
 			</form>
             <SocialLogin></SocialLogin>
-            <p className="text-sm text-center dark:text-gray-600 font-bold">Already have an account?
-					<Link to='/signIn' className="underline font-medium text-blue-600">Sign in here</Link>
+            <p className="text-sm text-center font-bold">Already have an account?
+					<Link to='/signIn' className="underline font-medium text-base-content">Sign in here</Link>
 				</p>
 		</div>
         </div>
