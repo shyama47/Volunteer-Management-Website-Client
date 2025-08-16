@@ -62,7 +62,7 @@ const AllVolunteerPost = () => {
         </div>
         </div>
         </div>
-        <div className='w-11/12 md:w-10/12 mx-auto grid grid-cols-1 space-y-4 md:grid-cols-3 md:gap-10 mb-5 md:my-7 '>
+        <div className='w-11/12 md:w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 space-y-4 md:grid-cols-3 sm:gap-7 md:gap-10 mb-5 md:my-7 '>
         
         {
         volunteerAllData.map(volunteer =>
