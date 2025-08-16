@@ -46,7 +46,7 @@ const BannerSlider = () => {
             damping:10,
             delay:0.3
         }}
-    className="max-w-6xl mx-auto bg-gray-900 my-10 rounded-lg ">
+    className="w-full md:w-10/12 mx-auto bg-gray-900 my-10 rounded-3xl ">
       <Swiper
         modules={[Pagination,Autoplay]}
         // modules={[ Navigation, Autoplay]}
