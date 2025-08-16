@@ -92,7 +92,7 @@ const MyVolunteerPost = () => {
     </table>
 
     ):(
-      <div className="p-10 text-center text-gray-800">
+      <div className="p-10 text-center text-base-content">
         <p className="text-xl font-medium">You haven’t posted any volunteer needs yet.</p>
         <p className="text-sm mt-1">Click “Add Volunteer Need” to create your first post.</p>
       </div>

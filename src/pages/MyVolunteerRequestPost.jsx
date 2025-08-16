@@ -81,7 +81,7 @@ const MyVolunteerRequestPost = () => {
                     </tbody>
                 </table>
                     ):(
-                       <div className="p-10 text-center text-gray-800">
+                       <div className="p-10 text-center text-base-content">
         <p className="text-xl font-medium">You haven’t requested to volunteer for any posts yet</p>
         <p className="text-sm mt-1">Browse volunteer opportunities and send a request to join</p>
       </div> 
