@@ -35,7 +35,7 @@ const SignIn = () => {
           <Helmet>
             <title>SignIn || Page</title>
           </Helmet>
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-xl border border-primary/40 rounded-2xl">
+    <div className="bg-base-100 w-11/12 max-w-sm mx-auto shrink-0 shadow-xl border border-primary/40 rounded-2xl">
       <div className="card-body">
          <h1 className="text-5xl font-medium text-center mb-3">Sign In now!!</h1>
         <form onSubmit={handleSignIn}>

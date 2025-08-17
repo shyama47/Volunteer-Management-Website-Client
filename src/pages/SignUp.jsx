@@ -52,7 +52,7 @@ const SignUp = () => {
     }
     return (
         <div className="flex justify-center items-center my-20">
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-xl border border-primary/40 rounded-2xl">
+    <div className="bg-base-100 w-11/12 mx-auto max-w-sm shrink-0 shadow-xl border border-primary/40 rounded-2xl">
       <div className="card-body">
 			<Helmet>
 				<title>signUp || page</title>

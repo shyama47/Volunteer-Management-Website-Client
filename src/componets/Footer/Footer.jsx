@@ -54,7 +54,7 @@ const Footer = () => {
 			initial={{opacity:0,y:100}}
 		whileInView={{opacity:1,y:0}}
 		// viewport={{once:true,amount:0.5}}
-		transition={{delay:0.8,duration:0.6}}
+		transition={{delay:0.6,duration:0.6}}
 			 className="space-y-3 ">
 				<div className="font-medium text-xl underline ">Follow Us</div>
 				<div className="flex justify-start space-x-3">

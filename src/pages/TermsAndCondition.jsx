@@ -40,11 +40,11 @@ const TermsAndCondition = () => {
             <Helmet>
                 <title>TermsAndCondition || Page</title>
             </Helmet>
-            <h1 className='text-2xl font-bold text-blue-800 text-left md:text-center mb-10'>Terms & Conditions</h1>
+            <h1 className='text-2xl font-bold text-primary text-left md:text-center mb-10'>Terms & Conditions</h1>
             {
                 termsContent.map(terms=>(
                     <div key={terms.id} className='space-y-2 '>
-                <h1 className='text-base-content text-sm font-bold'>{terms.title}</h1>
+                <h1 className='text-primary text-xl font-bold'>{terms.title}</h1>
                 <p className='text-base-content mb-4'>{terms.description}</p>
             </div>
                 ))

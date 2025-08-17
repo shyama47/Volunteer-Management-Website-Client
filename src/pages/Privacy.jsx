@@ -46,11 +46,11 @@ const Privacy = () => {
             <Helmet>
                 <title>Privacy || Page</title>
             </Helmet>
-            <h1 className='text-2xl font-bold text-blue-800 text-left md:text-center mb-10'>Privacy policy</h1>
+            <h1 className='text-2xl font-bold text-primary text-left md:text-center mb-10'>Privacy policy</h1>
             {
                 privacyContent.map(privacy=>(
                     <div key={privacy.id} className='space-y-2 '>
-                <h1 className='text-base-content text-sm font-bold'>{privacy.title}</h1>
+                <h1 className='text-primary text-xl font-bold'>{privacy.title}</h1>
                 <p className='text-base-content mb-4'>{privacy.description}</p>
             </div>
                 ))
