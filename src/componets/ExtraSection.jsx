@@ -49,7 +49,7 @@ const ExtraSection = () => {
 
     return (
         <div className=" my-10 bg-base-100 pb-16 pt-8">
-            <h2 className="text-3xl font-bold text-center text-base-content mb-6 ">Our Trusted Partners</h2>
+            <h2 className="text-3xl font-bold text-center text-base-content mb-20 ">Our Trusted Partners</h2>
             <Marquee pauseOnHover={true} speed={50} gradient={true}>
                 {images.map((img, index) => (
                     <div key={index} className="mx-6">
