@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaFacebookF, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router';
 import volunLogo from '../../assets/volLogo.png'
 import {delay, motion} from "framer-motion"
@@ -58,14 +58,14 @@ const Footer = () => {
 			 className="space-y-3 ">
 				<div className="font-medium text-xl underline ">Follow Us</div>
 				<div className="flex justify-start space-x-3">
-					<div className='bg-primary/100 rounded-full transfrom transition-transform duration-1000 hover:scale-110'>
-								<NavLink to="https://www.facebook.com/shotondrila.shyama.2025"> <FaFacebookF className='w-[27px] h-[27px] text-base-100 p-1 ' /></NavLink>
+					<div className='flex justify-center items-center  rounded-full transfrom transition-transform duration-1000 hover:scale-110 bg-primary/100 p-1'>
+								<NavLink to="https://www.facebook.com/shotondrila.shyama.2025"> <FaFacebookF className='w-[20px] h-[20px] text-base-100 ' /></NavLink>
 							</div>
 							<div className='rounded-full flex justify-center items-center transfrom transition-transform duration-1000 hover:scale-110 '>
-								<NavLink to=""><FaLinkedin className='w-[25px] h-[25px] text-primary/100' /></NavLink>
+								<NavLink to="https://www.youtube.com/"><FaYoutube className='w-[30px] h-[30px] text-primary/100' /></NavLink>
 							</div>
 							<div className='flex justify-center items-center  rounded-full transfrom transition-transform duration-1000 hover:scale-110'>
-								<NavLink to="https://github.com/shyama47"><FaGithub className='w-[25px] h-[25px] text-primary/100' /></NavLink>
+								<NavLink to="https://github.com/shyama47"><FaGithub className='w-[28px] h-[28px] text-primary/100' /></NavLink>
 							</div>
 							</div>
 							

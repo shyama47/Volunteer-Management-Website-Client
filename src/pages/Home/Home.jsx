@@ -7,6 +7,7 @@ import VolunteerTeamSection from '../../componets/VolunteerTeamSection';
 import TeamPhotoGallery from '../../componets/TeamPhotoGallery ';
 import {motion} from 'framer-motion'
 import { Helmet } from 'react-helmet-async';
+import ScrollToTop from '../ScrollToTop';
 const Home = () => {
     const volunteerData =useLoaderData();
    //  console.log(volunteerData);
@@ -35,6 +36,7 @@ const Home = () => {
      <TeamPhotoGallery></TeamPhotoGallery>
      <ExtraSection></ExtraSection>
      <VolunteerTeamSection></VolunteerTeamSection>
+     <ScrollToTop></ScrollToTop>
        </div>
 
     );
